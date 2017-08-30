@@ -38,12 +38,18 @@ public class AufgabenFactory {
     private Activity activity = null;
 
 
+    //private constructor
     private AufgabenFactory(Activity act) {
         this.activity = act;
         this.preferences = this.activity.getPreferences(Context.MODE_PRIVATE);
         initializeSettings();
     }
 
+    /**
+     * Singelton implementation
+     * @param act basic activity
+     * @return Instance of AufgabenFactory
+     */
     public static AufgabenFactory getInstance(Activity act) {
         if(instance == null) {
             instance = new AufgabenFactory(act);
@@ -51,6 +57,9 @@ public class AufgabenFactory {
         return instance;
     }
 
+    /**
+     * Initialize the settings from settings fragment, stored in SharedPreferences
+     */
     private void initializeSettings() {
         this.addSummand1_MIN = this.preferences.getInt("add1Min", -1) >= 0 ? this.preferences.getInt("add1Min", -1) : this.addSummand1_MIN;
         this.addSummand2_MIN = this.preferences.getInt("add2Min", -1) >= 0 ? this.preferences.getInt("add2Min", -1) : this.addSummand2_MIN;
@@ -70,6 +79,9 @@ public class AufgabenFactory {
         this.divFaktor2_MAX = this.preferences.getInt("div2Max", -1) >= 0 ? this.preferences.getInt("div2Max", -1) : this.divFaktor2_MAX;
     }
 
+    /**
+     * Save settings to SharedPreferences
+     */
     public void saveSettings() {
         SharedPreferences.Editor editor = this.preferences.edit();
         editor.putInt("add1Min", this.addSummand1_MIN);
@@ -92,11 +104,20 @@ public class AufgabenFactory {
     }
 
 
+    /**
+     * Generates a random mathematical operation
+     * @return operation (enum)
+     */
     private Operation getRandomOperation() {
         int randomNum = getRandomNum(0, 3);
         return Operation.fromId(randomNum);
     }
 
+    /**
+     * Generates a random equation with the given operation
+     * @param operation
+     * @return equation
+     */
     private Aufgabe generate(Operation operation) {
         Aufgabe retVal = new Aufgabe();
         retVal.setOperation(operation);
@@ -121,6 +142,10 @@ public class AufgabenFactory {
         return retVal;
     }
 
+    /**
+     * Gets a valid equation, which is in the defined bounds and solveable for primary school students
+     * @return equation
+     */
     public Aufgabe getAufgabe() {
         Aufgabe retVal = new Aufgabe();
         Operation operation = getRandomOperation();
@@ -134,6 +159,9 @@ public class AufgabenFactory {
         Random r = new Random();
         return r.nextInt(max - min + 1) + min;
     }
+
+    //Here are some bounds for the 4 basic mathematic operations
+    // @TODO all parameters in settings fragment editable
 
     public int getAddSummand1_MIN() {
         return addSummand1_MIN;

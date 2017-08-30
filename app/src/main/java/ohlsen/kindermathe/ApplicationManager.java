@@ -12,6 +12,7 @@ public class ApplicationManager {
 
     private String playerName = "";
 
+    //for debugging purposes
     public static Boolean DEBUG = true;
 
 
@@ -19,6 +20,10 @@ public class ApplicationManager {
 
     }
 
+    /**
+     * Singleton implementation of ApplicationManager
+     * @return Instance of ApplicationManager
+     */
     public static ApplicationManager getInstance() {
         if(instance == null) {
             instance = new ApplicationManager();
@@ -26,10 +31,18 @@ public class ApplicationManager {
         return instance;
     }
 
+    /**
+     * Gets actual player name
+     * @return string player name
+     */
     public String getPlayerName() {
         return this.playerName;
     }
 
+    /**
+     * Sets the player name
+     * @param playerName
+     */
     public void setPlayerName(String playerName) {
         if(ApplicationManager.DEBUG) {
             Log.d(this.getClass().toString(), "player name set to: " + this.playerName);

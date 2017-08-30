@@ -6,6 +6,9 @@ import android.util.Log;
  * Created by schoeneo on 24.08.2017.
  */
 
+/**
+ * Represents an equation with basic operations (+,-,*,/)
+ */
 public class Aufgabe {
 
     private int Teil1;
@@ -23,21 +26,30 @@ public class Aufgabe {
         this.setOperation(operation);
     }
 
+    /**
+     * Do some checks, that it this ist suitable for primary school students
+     * @return equation is suitable or not
+     */
     public Boolean isValid() {
         Boolean retVal = true;
+        // No operation defined
         if(this.getOperation() == Operation.None) {
             retVal = false;
         }
+        // solution constrained to 120
+        // @TODO parameter in settings menu editable
         if(this.getOperation() == Operation.Addition) {
             if(this.getTeil1() + this.getTeil2() > 120) {
                 retVal = false;
             }
         }
+        // No negative solutions
         if(this.getOperation() == Operation.Subtraktion) {
             if(this.getTeil1() < this.getTeil2()) {
                 retVal = false;
             }
         }
+        // Only integer divisions with zero rest
         if(this.getOperation() == Operation.Division) {
             if(this.getTeil1() == 0) {
                 retVal = false;
@@ -64,6 +76,10 @@ public class Aufgabe {
         return retVal;
     }
 
+    /**
+     * Gets solution of equation
+     * @return int solution
+     */
     public int getErgebnis() {
         int retVal = -1;
         if(this.isValid()) {
@@ -85,6 +101,10 @@ public class Aufgabe {
         return retVal;
     }
 
+    /**
+     * First part of equation
+     * @return int first number
+     */
     public int getTeil1() {
         return Teil1;
     }
@@ -93,6 +113,10 @@ public class Aufgabe {
         Teil1 = teil1;
     }
 
+    /**
+     * Second part of equation
+     * @return int second number
+     */
     public int getTeil2() {
         return Teil2;
     }
@@ -101,6 +125,10 @@ public class Aufgabe {
         Teil2 = teil2;
     }
 
+    /**
+     * Operation of equation
+     * @return
+     */
     public Operation getOperation() {
         return operation;
     }
@@ -109,6 +137,10 @@ public class Aufgabe {
         this.operation = operation;
     }
 
+    /**
+     * Overrides toString() for nice display of equation
+     * @return
+     */
     @Override
     public String toString() {
         return this.Teil1 + this.operation.toString() + this.Teil2;
