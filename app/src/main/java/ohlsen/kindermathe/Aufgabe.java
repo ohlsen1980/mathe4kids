@@ -27,7 +27,7 @@ public class Aufgabe {
     }
 
     /**
-     * Do some checks, that it this ist suitable for primary school students
+     * Do some checks, if this is suitable for primary school students
      * @return equation is suitable or not
      */
     public Boolean isValid() {
