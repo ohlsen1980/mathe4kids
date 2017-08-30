@@ -109,6 +109,7 @@ public class nameFragment extends Fragment {
     }
 
     private void onClickBtn(View v) {
+        //switch by button sender id
         if(v != null) {
             switch(v.getId()) {
                 case R.id.weiterBtn:
