@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KinderMathe</string>
+    <string name="btnWeiter_txt">Weiter</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hallo </string>
+</resources>

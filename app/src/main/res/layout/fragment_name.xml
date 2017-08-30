@@ -1,0 +1,42 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/name_fragment"
+    tools:context="ohlsen.kindermathe.nameFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bitte gib deinen Namen ein"
+        android:textSize="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/txtName"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:inputType="textAutoComplete"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center_horizontal"/>
+
+    <Button
+        android:id="@+id/weiterBtn"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="220dp"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/btnWeiter_txt"/>
+
+    <ImageButton
+        android:layout_width="60dp"
+        android:id="@+id/settingsBtn"
+        android:layout_height="60dp"
+        android:layout_gravity="bottom|right"
+        android:background="@mipmap/pignon"
+        android:layout_marginBottom="20dp"
+        android:layout_marginRight="20dp"/>
+
+</FrameLayout>
