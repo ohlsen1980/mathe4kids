@@ -30,8 +30,7 @@ public class nameFragment extends Fragment {
 
 
     public static nameFragment newInstance() {
-        nameFragment fragment = new nameFragment();
-        return fragment;
+        return new nameFragment();
     }
 
     @Override
@@ -67,7 +66,7 @@ public class nameFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Button weiterBtn = (Button) getActivity().findViewById(R.id.weiterBtn);
+        Button weiterBtn = getActivity().findViewById(R.id.weiterBtn);
         if(weiterBtn != null) {
             weiterBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -76,7 +75,7 @@ public class nameFragment extends Fragment {
                 }
             });
         }
-        ImageButton settingsBtn = (ImageButton) getActivity().findViewById(R.id.settingsBtn);
+        ImageButton settingsBtn = getActivity().findViewById(R.id.settingsBtn);
         if(settingsBtn != null) {
             settingsBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -131,7 +130,7 @@ public class nameFragment extends Fragment {
 
     private void weiterBtnClick() {
         //get players name and save it to ApplicationManager
-        EditText textField = (EditText) getActivity().findViewById(R.id.txtName);
+        EditText textField = getActivity().findViewById(R.id.txtName);
         if(textField != null && textField.getText() != null) {
             ApplicationManager.getInstance().setPlayerName(textField.getText().toString());
         }
