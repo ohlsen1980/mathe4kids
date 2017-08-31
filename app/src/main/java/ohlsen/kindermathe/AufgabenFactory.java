@@ -3,6 +3,7 @@ package ohlsen.kindermathe;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 
 import java.util.Random;
 
@@ -41,7 +42,7 @@ public class AufgabenFactory {
     //private constructor
     private AufgabenFactory(Activity act) {
         this.activity = act;
-        this.preferences = this.activity.getPreferences(Context.MODE_PRIVATE);
+        this.preferences = PreferenceManager.getDefaultSharedPreferences(this.activity);
         initializeSettings();
     }
 
@@ -77,6 +78,7 @@ public class AufgabenFactory {
         this.divFaktor2_MIN = this.preferences.getInt("div2Min", -1) >= 0 ? this.preferences.getInt("div2Min", -1) : this.divFaktor2_MIN;
         this.divFaktor1_MAX = this.preferences.getInt("div1Max", -1) >= 0 ? this.preferences.getInt("div1Max", -1) : this.divFaktor1_MAX;
         this.divFaktor2_MAX = this.preferences.getInt("div2Max", -1) >= 0 ? this.preferences.getInt("div2Max", -1) : this.divFaktor2_MAX;
+        saveSettings();
     }
 
     /**

@@ -1,27 +1,119 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-   >
+    android:layout_height="match_parent">
 
     <PreferenceCategory
-        android:title="test"
-        >
-        <CheckBoxPreference
-            android:key="test1"
-            android:summary="test"
-            android:title="Test"
-            android:defaultValue="false" />
-        <Preference
-            android:key="Test2"
-            android:dependency="test1"
-            android:summary="test"
-            android:title="test" />
-        <Preference
-            android:key="test3"
-            android:summary="test"
-            android:title="test"  />
+        android:title="Wertebereich für Addition">
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="add1Min"
+            android:title="Term 1 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="add2Min"
+            android:title="Term 2 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den zweiten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="add1Max"
+            android:title="Term 1 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="add2Max"
+            android:title="Term 2 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den zweiten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="addMax"
+            android:title="Begrenzung Ergebnis"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Hier können Sie das Ergebnis der Addition begrenzen"/>
     </PreferenceCategory>
-
-
-
+    <PreferenceCategory
+        android:title="Wertebereich für Subtraktion">
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="sub1Min"
+            android:title="Term 1 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="sub2Min"
+            android:title="Term 2 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den zweiten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="sub1Max"
+            android:title="Term 1 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="sub2Max"
+            android:title="Term 2 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den zweiten Term"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Wertebereich für Multiplikation">
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="mult1Min"
+            android:title="Term 1 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="mult2Min"
+            android:title="Term 2 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den zweiten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="mult1Max"
+            android:title="Term 1 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="mult2Max"
+            android:title="Term 2 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den zweiten Term"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Wertebereich für Division">
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="div1Min"
+            android:title="Term 1 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="div2Min"
+            android:title="Term 2 Minimum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der minimale Wert für den zweiten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="div1Max"
+            android:title="Term 1 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den ersten Term"/>
+        <ohlsen.kindermathe.IntEditTextPreference
+            android:key="div2Max"
+            android:title="Term 2 Maximum"
+            android:inputType="number"
+            android:numeric="integer"
+            android:summary="Der maximale Wert für den zweiten Term"/>
+    </PreferenceCategory>
 </PreferenceScreen>

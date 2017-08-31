@@ -15,4 +15,11 @@ public class SettingsFragment extends PreferenceFragment {
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.app_preferences);
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        //initialize first settings or defaults
+        AufgabenFactory factory = AufgabenFactory.getInstance(getActivity());
+    }
 }
